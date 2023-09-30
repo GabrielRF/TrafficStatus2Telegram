@@ -1,4 +1,5 @@
 import json
+import os
 import random
 import requests
 import sys
@@ -14,7 +15,7 @@ DESTINO = os.environ.get('DESTINO')
 def mappoint(local):
     locais = {
         'Rodoviária': 'Rodoviária Plano Piloto, Setor de Diversões Norte - Brasília, DF',
-        'Balão do aeroporto': 'Balão do Aeroporto Internacional de Brasília - Candangolândia, Brasília - DF, 70297-400',
+        'Balão do Aeroporto': 'Balão do Aeroporto Internacional de Brasília - Candangolândia, Brasília - DF, 70297-400',
         'Ponte do Bragueto (Lago Norte)': 'Ponte do Bragueto, Lago Paranoá, Brasília - DF',
         'Praça dos Três Poderes': 'Praça dos Três Poderes - Brasília, DF',
         'Ponte JK': 'Ponte Juscelino Kubitschek, Brasília - DF',
@@ -24,6 +25,8 @@ def mappoint(local):
         'Gama': 'Gama, Brasília - DF',
         'Planaltina': 'Planaltina, Brasília - DF',
         'Ceilândia': 'Ceilândia, Brasília - DF',
+        'Clube do Congresso': 'Clube do Congresso, SHIN QI, 16, Área Especial - Lago Norte - LAGO NORTE, Brasília - DF, 71530-200',
+        'Octogonal': 'Octogonal - Brasília, DF',
     }
     return locais.get(local)
 
@@ -71,7 +74,7 @@ def get_emoji(tipo, valor=None):
 
 def format_info(origem, destino, distancia, tempo, velocidade_media, link):
     line = (
-        f'<b>{origem}</b> ➡️ <b>{destino}</b>\n\n' +
+        f'<b>{origem}</b> → <b>{destino}</b>\n\n' +
         f'{get_emoji("carro")} <i>Distância</i>: {distancia}\n' +
         f'{get_emoji("relogio")} <i>Tempo</i>: {tempo}\n' +
         f'{get_emoji("velocidade", int(velocidade_media))} <i>Velocidade Média</i>: {velocidade_media} km/h\n\n' +
@@ -102,7 +105,6 @@ def generate_link(origem, destino):
     return link
 
 def send_message(message):
-    BOT_TOKEN = BOT_TOKEN
     bot = telebot.TeleBot(BOT_TOKEN)
     return bot.send_message(MESSAGE_DESTINATION,
         message,
