@@ -1,8 +1,9 @@
-name: Ponte do Bragueto - Clube do Congresso
+name: Ponte do Bragueto -> Clube do Congresso
 on:
   workflow_dispatch:
   schedule:
     - cron: '0,30 9,10,21,22 * * 1-5'
+    - cron: '0 9,10,21 * * 0,6'
 
 
 jobs:
@@ -24,5 +25,6 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           MESSAGE_DESTINATION: ${{ vars.MESSAGE_DESTINATION }}
-          ORIGEM: Ponte do Bragueto (Lago Norte)
-          DESTINO: Clube do Congresso
+          ORIGEM: Ponte do Bragueto, Brasília - DF
+          DESTINO: Setor de Habitações Individuais Norte QL 16 Clube do Congresso - LAGO NORTE, Brasília - DF
+          TITULO: ${{ github.workflow }}

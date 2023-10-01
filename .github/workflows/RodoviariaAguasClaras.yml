@@ -1,8 +1,9 @@
-name: Rodoviária - Aguas Claras
+name: Rodoviária -> Aguas Claras
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0,30 20,21,22 * * *'
+    - cron: '0,30 20,21,22 * * 1-5'
+    - cron: '0 20,21 * * 0,6'
 
 
 
@@ -25,5 +26,6 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           MESSAGE_DESTINATION: ${{ vars.MESSAGE_DESTINATION }}
-          ORIGEM: Rodoviária
-          DESTINO: Águas Claras
+          ORIGEM: Rodoviária Plano Piloto - Setor de Diversões Norte - Brasília, DF
+          DESTINO: Águas Claras, Brasília - DF
+          TITULO: ${{ github.workflow }}
