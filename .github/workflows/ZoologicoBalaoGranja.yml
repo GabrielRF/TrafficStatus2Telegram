@@ -1,9 +1,9 @@
-name: Rodoviária -> Balão do Aeroporto
+name: Zoológico -> Balão Granja do Torto
 on:
   workflow_dispatch:
   schedule:
     - cron: '0,30 20,21,22 * * 1-5'
-    - cron: '0 20,21,22 * * 0,6'
+    - cron: '0 20,21 * * 0,6'
 
 
 
@@ -26,6 +26,6 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           MESSAGE_DESTINATION: ${{ vars.MESSAGE_DESTINATION }}
-          ORIGEM: Rodoviária Plano Piloto - Setor de Diversões Norte - Brasília, DF
-          DESTINO: Balão do Aeroporto Internacional de Brasília - Candangolândia, Brasília - DF
+          ORIGEM: -15.840042025484875, -47.953111376257546
+          DESTINO: -15.713051724817221, -47.90002529192023
           TITULO: ${{ github.workflow }}

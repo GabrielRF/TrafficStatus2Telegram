@@ -1,10 +1,8 @@
-name: Rodoviária -> Balão do Aeroporto
+name: L4 -> Ponte JK -> Lago Sul
 on:
   workflow_dispatch:
   schedule:
     - cron: '0,30 20,21,22 * * 1-5'
-    - cron: '0 20,21,22 * * 0,6'
-
 
 
 jobs:
@@ -26,6 +24,6 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           MESSAGE_DESTINATION: ${{ vars.MESSAGE_DESTINATION }}
-          ORIGEM: Rodoviária Plano Piloto - Setor de Diversões Norte - Brasília, DF
-          DESTINO: Balão do Aeroporto Internacional de Brasília - Candangolândia, Brasília - DF
+          ORIGEM: -15.80519519380307, -47.85429454221951
+          DESTINO: -15.833377092457875, -47.82487346949391
           TITULO: ${{ github.workflow }}

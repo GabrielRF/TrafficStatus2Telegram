@@ -111,7 +111,8 @@ def send_message(message, link):
         message,
         parse_mode='HTML',
         disable_web_page_preview=True,
-        reply_markup=btn_link
+        reply_markup=btn_link,
+        disable_notification=True
     )
 
 if __name__ == "__main__":
