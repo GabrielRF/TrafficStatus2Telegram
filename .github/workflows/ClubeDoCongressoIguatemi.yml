@@ -1,4 +1,4 @@
-name: Rodoviária -> Taguatinga
+name: Clube do Congresso -> Shopping Deck Norte / Shopping Iguatemi
 on:
   workflow_dispatch:
   schedule:
@@ -24,6 +24,6 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           MESSAGE_DESTINATION: ${{ vars.MESSAGE_DESTINATION }}
-          ORIGEM: Rodoviária Plano Piloto - Setor de Diversões Norte - Brasília, DF
-          DESTINO: Taguatinga, Brasília - DF
+          ORIGEM: -15.770543697663252, -47.83273879927017
+          DESTINO: -15.722120607145422, -47.88344045551827
           TITULO: ${{ github.workflow }}
