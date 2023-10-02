@@ -62,7 +62,8 @@ def get_emoji(tipo, valor=None):
         return relogios.get(valor)
     elif tipo == 'velocidade':
         if valor < 1.25:
-            return '🟩'
+            exit()
+            #return '🟩'
         elif 1.25 <= valor < 1.5:
             return '🟨'
         elif 1.5 <= valor < 1.75:
