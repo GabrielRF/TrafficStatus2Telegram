@@ -24,6 +24,7 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           MESSAGE_DESTINATION: ${{ vars.MESSAGE_DESTINATION }}
+          IGNORAR_ABAIXO_DE: ${{ vars.IGNORAR_ABAIXO_DE }}
           ORIGEM: Rodoviária Plano Piloto - Setor de Diversões Norte - Brasília, DF
           DESTINO: Taguatinga, Brasília - DF
           TITULO: ${{ github.workflow }}

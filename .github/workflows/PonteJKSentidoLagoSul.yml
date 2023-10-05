@@ -24,6 +24,7 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           MESSAGE_DESTINATION: ${{ vars.MESSAGE_DESTINATION }}
+          IGNORAR_ABAIXO_DE: ${{ vars.IGNORAR_ABAIXO_DE }}
           ORIGEM: -15.80519519380307, -47.85429454221951
           DESTINO: -15.833377092457875, -47.82487346949391
           TITULO: ${{ github.workflow }}

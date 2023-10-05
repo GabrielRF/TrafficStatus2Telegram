@@ -14,6 +14,7 @@ MESSAGE_DESTINATION = os.environ.get('MESSAGE_DESTINATION')
 ORIGEM = os.environ.get('ORIGEM')
 DESTINO = os.environ.get('DESTINO')
 TITULO = os.environ.get('TITULO', f'{ORIGEM} → {DESTINO}')
+IGNORAR_ABAIXO_DE = os.environ.get('IGNORAR_ABAIXO_DE', 0)
 
 def distancematrix(origem, destino):
     response = requests.get(
@@ -61,9 +62,10 @@ def get_emoji(tipo, valor=None):
         relogios = {num: valor for rng, valor in relogios.items() for num in rng}
         return relogios.get(valor)
     elif tipo == 'velocidade':
-        if valor < 1.25:
+        if valor < float(IGNORAR_ABAIXO_DE):
             exit()
-            #return '🟩'
+        elif valor < 1.25:
+            return '🟩'
         elif 1.25 <= valor < 1.5:
             return '🟨'
         elif 1.5 <= valor < 1.75:

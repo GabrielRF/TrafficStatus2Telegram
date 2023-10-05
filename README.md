@@ -15,7 +15,8 @@ Envio automático do tempo de viagem de carro entre dois pontos usando Google Ma
 * `MESSAGE_DESTINATION`: Destino da mensagem;
 * `ORIGEM`: Ponto de início da viagem;
 * `DESTINO`: Ponto de término da viagem;
-* `TITULO`: Título da mensagem.
+* `TITULO`: Título da mensagem;
+* `IGNORAR_ABAIXO_DE`: A mensagem não será enviada se o [indicativo do tempo de viagem](#indicativo-do-tempo-de-viagem) for abaixo do valor determinado. Exemplo: `1.25` para ignorar casos em que o trânsito está bom, ou seja, que seria enviado o 🟩.
 
 ### Indicativo do tempo de viagem
 
