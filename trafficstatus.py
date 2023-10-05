@@ -44,7 +44,7 @@ def get_emoji(tipo, valor=None):
         return random.choice(carros)
     elif tipo == 'relogio':
         valor = int(valor/60)
-        while valor > 60: valor = valor - 60
+        while valor >= 60: valor = valor - 60
         relogios = {
             range(0, 5): '🕐',
             range(5, 10): '🕑',
