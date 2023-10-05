@@ -78,6 +78,7 @@ def format_info(origem, destino, distancia, tempo, tempo_s, tempo_s_padrao, velo
         f'{get_emoji("relogio", int(tempo_s))} <i>Tempo</i>: {tempo}\n' +
         f'{get_emoji("velocidade", float(tempo_s/tempo_s_padrao))} <i>Velocidade Média</i>: {velocidade_media} km/h\n\n'
     )
+    print(f'Relogio {tempo_s}')
     return line
 
 def get_data(origem, destino):
